@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DesignMinds/static/css/main.cdb0dd70.css",
+    "main.js": "/DesignMinds/static/js/main.48220cd5.js",
+    "static/js/453.f9f3af86.chunk.js": "/DesignMinds/static/js/453.f9f3af86.chunk.js",
+    "index.html": "/DesignMinds/index.html",
+    "main.cdb0dd70.css.map": "/DesignMinds/static/css/main.cdb0dd70.css.map",
+    "main.48220cd5.js.map": "/DesignMinds/static/js/main.48220cd5.js.map",
+    "453.f9f3af86.chunk.js.map": "/DesignMinds/static/js/453.f9f3af86.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cdb0dd70.css",
+    "static/js/main.48220cd5.js"
+  ]
+}
