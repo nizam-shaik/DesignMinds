@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/DesignMinds/static/css/main.4a5e5138.css",
-    "main.js": "/DesignMinds/static/js/main.c8a8884c.js",
+    "main.css": "/DesignMinds/static/css/main.3486f195.css",
+    "main.js": "/DesignMinds/static/js/main.ce9936b0.js",
     "static/js/453.f9f3af86.chunk.js": "/DesignMinds/static/js/453.f9f3af86.chunk.js",
     "index.html": "/DesignMinds/index.html",
-    "main.4a5e5138.css.map": "/DesignMinds/static/css/main.4a5e5138.css.map",
-    "main.c8a8884c.js.map": "/DesignMinds/static/js/main.c8a8884c.js.map",
+    "main.3486f195.css.map": "/DesignMinds/static/css/main.3486f195.css.map",
+    "main.ce9936b0.js.map": "/DesignMinds/static/js/main.ce9936b0.js.map",
     "453.f9f3af86.chunk.js.map": "/DesignMinds/static/js/453.f9f3af86.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a5e5138.css",
-    "static/js/main.c8a8884c.js"
+    "static/css/main.3486f195.css",
+    "static/js/main.ce9936b0.js"
   ]
 }
