@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FileText, Database, Cpu, Brain, GitBranch, Layers, Zap, BarChart3, Settings, CheckCircle, AlertTriangle } from 'lucide-react';
+import { FileText, ShieldCheck, Globe, Workflow,FileOutput, Database, Cpu, Brain, GitBranch, Layers, Zap, BarChart3, Settings, CheckCircle, AlertTriangle } from 'lucide-react';
 
 const ArchitectureDiagram = () => {
   const [selectedView, setSelectedView] = useState('complete');
@@ -61,7 +61,7 @@ const ArchitectureDiagram = () => {
       </div>
       <div className="flex gap-6 text-sm bg-blue-800 bg-opacity-50 p-3 rounded-lg">
         <div><span className="font-semibold">Stack:</span> Python, Streamlit, LangGraph</div>
-        <div><span className="font-semibold">AI:</span> Google Gemini Pro</div>
+        <div><span className="font-semibold">AI:</span> Googl Gemini-2.0-flash</div>
         <div><span className="font-semibold">ML:</span> scikit-learn, XGBoost</div>
       </div>
     </div>
@@ -69,35 +69,48 @@ const ArchitectureDiagram = () => {
 
   const CompleteArchitecture = () => (
     <div className="space-y-6">
-      {/* Layer 1: User Interface */}
-      <div className="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-xl border-2 border-indigo-300 shadow-lg">
-        <div className="flex items-center gap-2 mb-4">
-          <Layers className="w-6 h-6 text-indigo-600" />
-          <h2 className="text-xl font-bold text-indigo-900">Layer 1: User Interface (Streamlit)</h2>
-        </div>
-        <div className="grid grid-cols-3 gap-4">
-          <div className="bg-white p-4 rounded-lg border border-indigo-200 shadow">
-            <FileText className="w-5 h-5 text-indigo-600 mb-2" />
-            <div className="font-semibold text-sm mb-1">HLD Generation Tab</div>
-            <div className="text-xs text-gray-600">PDF Upload, Workflow Config, Progress Monitor</div>
-          </div>
-          <div className="bg-white p-4 rounded-lg border border-indigo-200 shadow">
-            <Brain className="w-5 h-5 text-indigo-600 mb-2" />
-            <div className="font-semibold text-sm mb-1">ML Training Tab</div>
-            <div className="text-xs text-gray-600">Dataset Generation, Model Training, Validation</div>
-          </div>
-          <div className="bg-white p-4 rounded-lg border border-indigo-200 shadow">
-            <BarChart3 className="w-5 h-5 text-indigo-600 mb-2" />
-            <div className="font-semibold text-sm mb-1">Quality Prediction Tab</div>
-            <div className="text-xs text-gray-600">Score Display, Feature Importance, Analytics</div>
-          </div>
-        </div>
-        <div className="mt-3 text-center">
-          <div className="inline-block bg-indigo-600 text-white px-3 py-1 rounded text-xs font-semibold">
-            Real-time Event Streaming ↓
-          </div>
-        </div>
+{/* Layer 1: User Interface */}
+<div className="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-xl border-2 border-indigo-300 shadow-lg">
+  <div className="flex items-center gap-2 mb-4">
+    <Layers className="w-6 h-6 text-indigo-600" />
+    <h2 className="text-xl font-bold text-indigo-900">Layer 1: User Interface (Streamlit)</h2>
+  </div>
+
+  <div className="grid grid-cols-3 gap-4">
+    {/* HLD Tab */}
+    <div className="bg-white p-4 rounded-lg border border-indigo-200 shadow flex items-center gap-3">
+      <FileText className="w-6 h-6 text-indigo-600" />
+      <div>
+        <div className="font-semibold text-sm mb-1">HLD Generation Tab</div>
+        <div className="text-xs text-gray-600">PDF Upload, Workflow Config, Progress Monitor</div>
       </div>
+    </div>
+
+    {/* ML Training */}
+    <div className="bg-white p-4 rounded-lg border border-indigo-200 shadow flex items-center gap-3">
+      <Brain className="w-6 h-6 text-indigo-600" />
+      <div>
+        <div className="font-semibold text-sm mb-1">ML Training Tab</div>
+        <div className="text-xs text-gray-600">Dataset Generation, Model Training, Validation</div>
+      </div>
+    </div>
+
+    {/* Quality Tab */}
+    <div className="bg-white p-4 rounded-lg border border-indigo-200 shadow flex items-center gap-3">
+      <BarChart3 className="w-6 h-6 text-indigo-600" />
+      <div>
+        <div className="font-semibold text-sm mb-1">Quality Prediction Tab</div>
+        <div className="text-xs text-gray-600">Score Display, Feature Importance, Analytics</div>
+      </div>
+    </div>
+  </div>
+
+  <div className="mt-3 text-center">
+    <div className="inline-block bg-indigo-600 text-white px-3 py-1 rounded text-xs font-semibold">
+      Real-time Event Streaming ↓
+    </div>
+  </div>
+</div>
 
       {/* Layer 2: Workflow Orchestration */}
       <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border-2 border-green-300 shadow-lg">
@@ -168,7 +181,7 @@ const ArchitectureDiagram = () => {
               {[
                 'Synthetic Dataset (30K samples)',
                 'Feature Extraction (37 features)',
-                'Feature Selection (top 25)',
+                'Feature Selection ',
                 'StandardScaler Normalization',
                 'Model Training (RF, GB, XGB)',
                 'Cross-validation & Tuning',
@@ -200,28 +213,50 @@ const ArchitectureDiagram = () => {
       </div>
 
       {/* Layer 4: AI Agent Layer */}
-      <div className="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-2 border-amber-300 shadow-lg">
-        <div className="flex items-center gap-2 mb-4">
-          <Brain className="w-6 h-6 text-amber-600" />
-          <h2 className="text-xl font-bold text-amber-900">Layer 3: AI Agent Layer (Google Gemini Pro)</h2>
-        </div>
-        <div className="grid grid-cols-7 gap-2">
-          <div className="bg-white p-3 rounded-lg border border-amber-200 shadow text-center">
-            <Cpu className="w-5 h-5 text-amber-600 mx-auto mb-1" />
-            <div className="font-semibold text-xs">Base Agent</div>
-            <div className="text-xs text-gray-600">Framework</div>
-          </div>
-          {['PDF', 'Auth', 'Domain', 'Behavior', 'Diagram', 'Output'].map(agent => (
-            <div key={agent} className="bg-amber-100 p-3 rounded-lg border border-amber-300 shadow text-center">
-              <div className="font-semibold text-xs">{agent}</div>
-              <div className="text-xs text-gray-600">Agent</div>
-            </div>
-          ))}
-        </div>
-        <div className="mt-3 text-center text-xs text-amber-800">
-          Structured Output Parsing | Retry Logic | Gemini Pro API Integration
-        </div>
+<div className="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-2 border-amber-300 shadow-lg">
+  <div className="flex items-center gap-2 mb-4">
+    <Brain className="w-6 h-6 text-amber-600" />
+    <h2 className="text-xl font-bold text-amber-900">
+      Layer 3: AI Agent Layer (Google Gemini-2.0-flash)
+    </h2>
+  </div>
+
+  <div className="grid grid-cols-7 gap-2">
+
+    {/* Base Agent */}
+    {/* <div className="bg-white p-3 rounded-lg border border-amber-200 shadow text-center">
+      <Cpu className="w-5 h-5 text-amber-600 mx-auto mb-1" />
+      <div className="font-semibold text-xs">Base Agent</div>
+      <div className="text-xs text-gray-600">Framework</div>
+    </div> */}
+
+    {/* Dynamic Agents With Icons */}
+    {[
+      { name: 'Base Agent', icon: Cpu },
+      { name: 'PDF', icon: FileText },
+      { name: 'Auth', icon: ShieldCheck },
+      { name: 'Domain', icon: Globe },
+      { name: 'Behavior', icon: Settings },
+      { name: 'Diagram', icon: Workflow },
+      { name: 'Output', icon: FileOutput }
+    ].map(({ name, icon: Icon }) => (
+      <div
+        key={name}
+        className="bg-amber-100 p-3 rounded-lg border border-amber-300 shadow text-center flex flex-col items-center"
+      >
+        <Icon className="w-5 h-5 text-amber-600 mb-1" />
+        <div className="font-semibold text-xs">{name}</div>
+        <div className="text-xs text-gray-600">Agent</div>
       </div>
+    ))}
+
+  </div>
+
+  <div className="mt-3 text-center text-xs text-amber-800">
+    Structured Output Parsing | Retry Logic | Google Gemini-2.0-flash Integration
+  </div>
+</div>
+
 
       {/* Layer 5: Storage */}
       <div className="bg-gradient-to-r from-gray-50 to-slate-50 p-6 rounded-xl border-2 border-gray-300 shadow-lg">
@@ -307,34 +342,60 @@ const ArchitectureDiagram = () => {
               color: 'from-orange-100 to-orange-200'
             }
           ].map((step, idx) => (
-            <div key={idx} className={`bg-gradient-to-r ${step.color} p-5 rounded-xl border-2 border-gray-300 shadow-lg`}>
-              <div className="flex items-start justify-between mb-3">
-                <div>
-                  <div className="font-bold text-lg">{step.node}</div>
-                  <div className="text-sm text-gray-700">Powered by: {step.agent}</div>
-                </div>
-                <Zap className="w-6 h-6 text-yellow-600" />
-              </div>
-              <div className="grid grid-cols-3 gap-3 text-sm">
-                <div>
-                  <div className="font-semibold text-gray-700">Input:</div>
-                  <div className="text-gray-600">{step.input}</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-700">Processing:</div>
-                  <div className="text-gray-600">{step.process}</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-700">Output:</div>
-                  <div className="text-gray-600">{step.output}</div>
-                </div>
-              </div>
-              {idx < 5 && (
-                <div className="text-center mt-3">
-                  <div className="inline-block text-2xl text-gray-400">↓</div>
-                </div>
-              )}
-            </div>
+<div
+  key={idx}
+  className={`bg-gradient-to-r ${step.color} p-6 rounded-xl border-2 border-gray-300 shadow-lg`}
+>
+  {/* Header */}
+  <div className="flex items-center justify-between mb-4">
+    <div>
+      <div className="font-bold text-xl">{step.node}</div>
+      <div className="text-base text-gray-700">Powered by: {step.agent}</div>
+    </div>
+    <Zap className="w-7 h-7 text-yellow-600" />
+  </div>
+
+  {/* FIXED Layout */}
+
+<div className="grid grid-cols-3 gap-4 mt-4 text-[17px] leading-relaxed items-start">
+
+  {/* Input */}
+  <div className="text-left px-3 border-r border-gray-300/50">
+    <div className="font-semibold text-gray-800 mb-1">Input</div>
+    <div className="text-gray-700">
+      {step.input}
+    </div>
+  </div>
+
+  {/* Processing */}
+  <div className="text-center px-3">
+    <div className="font-semibold text-gray-800 mb-1">Processing</div>
+    <div className="text-gray-700 max-w-[420px] mx-auto">
+      {step.process}
+    </div>
+  </div>
+
+  {/* Output */}
+  <div className="text-right px-3 border-l border-gray-300/50">
+    <div className="font-semibold text-gray-800 mb-1">Output</div>
+    <div className="text-gray-700">
+      {step.output}
+    </div>
+  </div>
+
+
+
+
+  </div>
+
+  {/* Arrow */}
+  {/* {idx < 5 && (
+    <div className="text-center mt-4">
+      <div className="inline-block text-3xl text-gray-400">↓</div>
+    </div>
+  )} */}
+</div>
+
           ))}
         </div>
 
@@ -522,128 +583,171 @@ const ArchitectureDiagram = () => {
             </div>
           </div>
 
-          {/* Parallel */}
-          <div className="bg-white p-6 rounded-xl border-2 border-green-400 shadow-lg">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2</div>
-              <h3 className="text-xl font-bold text-green-900">Parallel Workflow</h3>
-            </div>
-            <div className="text-gray-700 mb-4">Concurrent execution of Domain, Auth, and Behavior nodes after PDF extraction</div>
-            
-            <div className="space-y-4">
-              <div className="flex justify-center">
-                <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow">
-                  <div className="font-semibold">PDF Extraction</div>
-                </div>
-              </div>
-              
-              <div className="text-center text-2xl text-green-600 font-bold">↓</div>
-              
-              <div className="grid grid-cols-3 gap-4">
-                <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow text-center">
-                  <div className="font-semibold">Domain</div>
-                  <div className="text-xs text-gray-600 mt-1">Parallel</div>
-                </div>
-                <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow text-center">
-                  <div className="font-semibold">Auth</div>
-                  <div className="text-xs text-gray-600 mt-1">Parallel</div>
-                </div>
-                <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow text-center">
-                  <div className="font-semibold">Behavior</div>
-                  <div className="text-xs text-gray-600 mt-1">Parallel</div>
-                </div>
-              </div>
-              
-              <div className="text-center text-2xl text-green-600 font-bold">↓</div>
-              
-              <div className="flex justify-center">
-                <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow">
-                  <div className="font-semibold">Parallel Coordinator</div>
-                  <div className="text-xs text-gray-600 mt-1">Merge Results</div>
-                </div>
-              </div>
-              
-              <div className="text-center text-2xl text-green-600 font-bold">↓</div>
-              
-              <div className="flex justify-center">
-                <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow text-center">
-                  <div className="font-semibold">Diagram Agent</div>
-                </div>
-              </div>
-              
-              <div className="text-center text-2xl text-green-600 font-bold">↓</div>
-              
-              <div className="flex justify-center">
-                <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow text-center">
-                  <div className="font-semibold">Output</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-4 bg-green-50 p-3 rounded text-sm">
-              <span className="font-semibold">Best for:</span> Performance optimization, independent node processing, faster execution
-            </div>
-            <div className="mt-2 bg-yellow-50 border border-yellow-300 p-3 rounded text-sm">
-              <AlertTriangle className="w-4 h-4 inline mr-2 text-yellow-600" />
-              <span className="font-semibold">Note:</span> Uses parallel coordinator to merge concurrent results
-            </div>
-          </div>
+{/* Parallel Workflow */}
+<div className="bg-white p-6 rounded-xl border-2 border-green-400 shadow-lg">
 
-          {/* Conditional */}
-          <div className="bg-white p-6 rounded-xl border-2 border-purple-400 shadow-lg">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">3</div>
-              <h3 className="text-xl font-bold text-purple-900">Conditional Workflow</h3>
-            </div>
-            <div className="text-gray-700 mb-4">Dynamic routing based on content analysis and requirements</div>
-            
-            <div className="space-y-4">
-              <div className="flex justify-center">
-                <div className="bg-purple-100 px-4 py-3 rounded-lg border-2 border-purple-400 shadow">
-                  <div className="font-semibold">PDF Extraction + Analysis</div>
-                </div>
-              </div>
-              
-              <div className="text-center text-2xl text-purple-600 font-bold">↓</div>
-              
-              <div className="bg-purple-50 p-4 rounded-lg border-2 border-purple-300">
-                <div className="font-semibold text-center mb-3">Content Router</div>
-                <div className="grid grid-cols-3 gap-3 text-xs">
-                  <div className="bg-white p-2 rounded border border-purple-200">
-                    <div className="font-semibold">If auth detected:</div>
-                    <div className="text-gray-600">→ Auth Node</div>
-                  </div>
-                  <div className="bg-white p-2 rounded border border-purple-200">
-                    <div className="font-semibold">If APIs present:</div>
-                    <div className="text-gray-600">→ Domain Node</div>
-                  </div>
-                  <div className="bg-white p-2 rounded border border-purple-200">
-                    <div className="font-semibold">If use cases:</div>
-                    <div className="text-gray-600">→ Behavior Node</div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="text-center text-2xl text-purple-600 font-bold">↓</div>
-              
-              <div className="bg-purple-100 p-3 rounded-lg border-2 border-purple-400 text-center">
-                <div className="font-semibold">Dynamic Node Execution</div>
-                <div className="text-xs text-gray-600 mt-1">Only processes relevant sections</div>
-              </div>
-              
-              <div className="text-center text-2xl text-purple-600 font-bold">↓</div>
-              
-              <div className="flex justify-center">
-                <div className="bg-purple-100 px-4 py-3 rounded-lg border-2 border-purple-400 shadow">
-                  <div className="font-semibold">Diagram + Output</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-4 bg-purple-50 p-3 rounded text-sm">
-              <span className="font-semibold">Best for:</span> Heterogeneous requirements, resource optimization, adaptive processing
-            </div>
+  {/* Title */}
+  <div className="flex items-center gap-3 mb-4">
+    <div className="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2</div>
+    <h3 className="text-xl font-bold text-green-900">Parallel Workflow</h3>
+  </div>
+
+  <div className="text-gray-700 mb-6">
+    Concurrent execution of Domain, Auth, and Behavior nodes after PDF extraction
+  </div>
+
+  {/* Horizontal Flow */}
+  <div className="flex flex-wrap items-center justify-center gap-8">
+
+    {/* PDF Extraction */}
+    <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow text-center min-w-[150px]">
+      <div className="font-semibold">PDF Extraction</div>
+    </div>
+
+    {/* Arrow */}
+    <div className="text-3xl font-bold text-green-600">→</div>
+
+    {/* Parallel Vertical Stack */}
+    <div className="flex flex-col items-center gap-3">
+
+      <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow text-center min-w-[150px]">
+        <div className="font-semibold">Domain</div>
+        <div className="text-xs text-gray-600 mt-1">Parallel</div>
+      </div>
+
+      <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow text-center min-w-[150px]">
+        <div className="font-semibold">Auth</div>
+        <div className="text-xs text-gray-600 mt-1">Parallel</div>
+      </div>
+
+      <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow text-center min-w-[150px]">
+        <div className="font-semibold">Behavior</div>
+        <div className="text-xs text-gray-600 mt-1">Parallel</div>
+      </div>
+
+    </div>
+
+    {/* Arrow */}
+    <div className="text-3xl font-bold text-green-600">→</div>
+
+    {/* Coordinator */}
+    <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow text-center min-w-[180px]">
+      <div className="font-semibold">Parallel Coordinator</div>
+      <div className="text-xs text-gray-600 mt-1">Merge Results</div>
+    </div>
+
+    {/* Arrow */}
+    <div className="text-3xl font-bold text-green-600">→</div>
+
+    {/* Diagram Agent */}
+    <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow text-center min-w-[150px]">
+      <div className="font-semibold">Diagram Agent</div>
+    </div>
+
+    {/* Arrow */}
+    <div className="text-3xl font-bold text-green-600">→</div>
+
+    {/* Output */}
+    <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow text-center min-w-[120px]">
+      <div className="font-semibold">Output</div>
+    </div>
+
+  </div>
+
+  {/* Notes */}
+  <div className="mt-6 bg-green-50 p-3 rounded text-sm">
+    <span className="font-semibold">Best for:</span> Performance optimization, independent node processing, faster execution
+  </div>
+  <div className="mt-2 bg-yellow-50 border border-yellow-300 p-3 rounded text-sm">
+    <AlertTriangle className="w-4 h-4 inline mr-2 text-yellow-600" />
+    <span className="font-semibold">Note:</span> Uses parallel coordinator to merge concurrent results
+  </div>
+
+</div>
+
+
+
+{/* Conditional */}
+<div className="bg-white p-6 rounded-xl border-2 border-purple-400 shadow-lg">
+  <div className="flex items-center gap-3 mb-4">
+    <div className="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">3</div>
+    <h3 className="text-xl font-bold text-purple-900">Conditional Workflow</h3>
+  </div>
+
+  <div className="text-gray-700 mb-4">
+    Dynamic routing based on content analysis and requirements
+  </div>
+
+  {/* HORIZONTAL MAIN FLOW */}
+  <div className="flex items-center justify-center gap-6 mt-6">
+
+    {/* 1️⃣ PDF */}
+    <div className="flex flex-col items-center">
+      <div className="bg-purple-100 px-5 py-3 rounded-lg border-2 border-purple-400 shadow text-center">
+        <div className="font-semibold">PDF Extraction + Analysis</div>
+      </div>
+    </div>
+      <div className="text-2xl text-purple-600 font-bold mt-2">→</div>
+
+    {/* 2️⃣ AUTH */}
+    <div className="flex flex-col items-center">
+      <div className="bg-purple-200 px-5 py-3 rounded-lg border-2 border-purple-500 shadow text-center">
+        <div className="font-semibold">Auth Node</div>
+      </div>
+    </div>
+      <div className="text-2xl text-purple-600 font-bold mt-2">→</div>
+
+    {/* 3️⃣ PARALLEL DOMAIN + BEHAVIOR */}
+    <div className="flex flex-col items-center">
+
+      {/* Parallel container (vertical stack for Domain and Behavior) */}
+      <div className="flex flex-col gap-6">
+
+        {/* DOMAIN → DIAGRAM (horizontal inside Domain block) */}
+        <div className="flex items-center gap-2">
+          <div className="bg-purple-100 px-4 py-3 rounded-lg border-2 border-purple-400 shadow w-40 text-center">
+            <div className="font-semibold">Domain</div>
+            <div className="text-xs text-gray-600 mt-1">Parallel</div>
           </div>
+          <div className="text-2xl text-purple-600 font-bold">→</div>
+          <div className="bg-purple-100 px-4 py-3 rounded-lg border-2 border-purple-400 shadow w-40 text-center">
+            <div className="font-semibold">Diagram Agent</div>
+            <div className="text-xs text-gray-600 mt-1">If Domain Exists</div>
+          </div>
+        </div>
+
+        {/* BEHAVIOR */}
+        <div className="flex items-center gap-2">
+          <div className="bg-purple-100 px-4 py-3 rounded-lg border-2 border-purple-400 shadow w-40 text-center">
+            <div className="font-semibold">Behavior</div>
+            <div className="text-xs text-gray-600 mt-1">Parallel</div>
+          </div>
+                <div className="text-2xl text-purple-600 font-bold mt-4">→</div>
+
+        </div>
+        
+      </div>
+
+      {/* Merge arrow (to Output) */}
+    </div>
+      <div className="text-2xl text-purple-600 font-bold mt-4">→</div>
+
+    {/* 4️⃣ OUTPUT */}
+    <div className="flex flex-col items-center">
+      <div className="bg-purple-100 px-5 py-3 rounded-lg border-2 border-purple-400 shadow text-center">
+        <div className="font-semibold">Output</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div className="mt-4 bg-purple-50 p-3 rounded text-sm">
+    <span className="font-semibold">Best for:</span> Adaptive routing, conditional execution, merging parallel results
+  </div>
+</div>
+
+
+
         </div>
       </div>
 
