@@ -641,7 +641,7 @@ const ArchitectureDiagram = () => {
 
     {/* Diagram Agent */}
     <div className="bg-green-100 px-4 py-3 rounded-lg border-2 border-green-400 shadow text-center min-w-[150px]">
-      <div className="font-semibold">Diagram Agent</div>
+      <div className="font-semibold">Diagram</div>
     </div>
 
     {/* Arrow */}
@@ -684,7 +684,7 @@ const ArchitectureDiagram = () => {
     {/* 1️⃣ PDF */}
     <div className="flex flex-col items-center">
       <div className="bg-purple-100 px-5 py-3 rounded-lg border-2 border-purple-400 shadow text-center">
-        <div className="font-semibold">PDF Extraction + Analysis</div>
+        <div className="font-semibold">PDF Extraction</div>
       </div>
     </div>
       <div className="text-2xl text-purple-600 font-bold mt-2">→</div>
@@ -692,7 +692,7 @@ const ArchitectureDiagram = () => {
     {/* 2️⃣ AUTH */}
     <div className="flex flex-col items-center">
       <div className="bg-purple-200 px-5 py-3 rounded-lg border-2 border-purple-500 shadow text-center">
-        <div className="font-semibold">Auth Node</div>
+        <div className="font-semibold">Auth</div>
       </div>
     </div>
       <div className="text-2xl text-purple-600 font-bold mt-2">→</div>
@@ -711,7 +711,7 @@ const ArchitectureDiagram = () => {
           </div>
           <div className="text-2xl text-purple-600 font-bold">→</div>
           <div className="bg-purple-100 px-4 py-3 rounded-lg border-2 border-purple-400 shadow w-40 text-center">
-            <div className="font-semibold">Diagram Agent</div>
+            <div className="font-semibold">Diagram</div>
             <div className="text-xs text-gray-600 mt-1">If Domain Exists</div>
           </div>
         </div>
