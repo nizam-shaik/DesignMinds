@@ -666,7 +666,6 @@ const ArchitectureDiagram = () => {
 </div>
 
 
-
 {/* Conditional */}
 <div className="bg-white p-6 rounded-xl border-2 border-purple-400 shadow-lg">
   <div className="flex items-center gap-3 mb-4">
@@ -678,73 +677,85 @@ const ArchitectureDiagram = () => {
     Dynamic routing based on content analysis and requirements
   </div>
 
-  {/* HORIZONTAL MAIN FLOW */}
+  {/* MAIN FLOW */}
   <div className="flex items-center justify-center gap-6 mt-6">
 
-    {/* 1️⃣ PDF */}
-    <div className="flex flex-col items-center">
-      <div className="bg-purple-100 px-5 py-3 rounded-lg border-2 border-purple-400 shadow text-center">
-        <div className="font-semibold">PDF Extraction</div>
-      </div>
+    {/* 1️⃣ PDF Extraction */}
+    <div className="bg-purple-100 px-5 py-3 rounded-lg border-2 border-purple-400 shadow text-center">
+      <div className="font-semibold">PDF Extraction</div>
     </div>
-      <div className="text-2xl text-purple-600 font-bold mt-2">→</div>
 
-    {/* 2️⃣ AUTH */}
-    <div className="flex flex-col items-center">
-      <div className="bg-purple-200 px-5 py-3 rounded-lg border-2 border-purple-500 shadow text-center">
-        <div className="font-semibold">Auth</div>
-      </div>
+    <div className="text-2xl text-purple-600 font-bold">→</div>
+
+    {/* 2️⃣ Auth Integrations */}
+    <div className="bg-purple-200 px-5 py-3 rounded-lg border-2 border-purple-500 shadow text-center">
+      <div className="font-semibold">Auth Integrations</div>
     </div>
-      <div className="text-2xl text-purple-600 font-bold mt-2">→</div>
 
-    {/* 3️⃣ PARALLEL DOMAIN + BEHAVIOR */}
-    <div className="flex flex-col items-center">
+    <div className="text-2xl text-purple-600 font-bold">→</div>
 
-      {/* Parallel container (vertical stack for Domain and Behavior) */}
-      <div className="flex flex-col gap-6">
+    {/* 3️⃣ CONDITIONAL AREA */}
+    <div className="flex flex-col items-center gap-6">
 
-        {/* DOMAIN → DIAGRAM (horizontal inside Domain block) */}
-        <div className="flex items-center gap-2">
-          <div className="bg-purple-100 px-4 py-3 rounded-lg border-2 border-purple-400 shadow w-40 text-center">
-            <div className="font-semibold">Domain</div>
-            <div className="text-xs text-gray-600 mt-1">Parallel</div>
-          </div>
-          <div className="text-2xl text-purple-600 font-bold">→</div>
-          <div className="bg-purple-100 px-4 py-3 rounded-lg border-2 border-purple-400 shadow w-40 text-center">
-            <div className="font-semibold">Diagram</div>
-            <div className="text-xs text-gray-600 mt-1">If Domain Exists</div>
-          </div>
+      {/* Branch from Auth */}
+      <div className="flex items-center gap-3">
+        {/* API route */}
+        <div className="bg-purple-100 px-4 py-3 rounded-lg border-2 border-purple-400 shadow w-44 text-center">
+          <div className="font-semibold">Domain API Design</div>
+          <div className="text-xs text-gray-600 mt-1">If API Content</div>
         </div>
 
-        {/* BEHAVIOR */}
-        <div className="flex items-center gap-2">
-          <div className="bg-purple-100 px-4 py-3 rounded-lg border-2 border-purple-400 shadow w-40 text-center">
-            <div className="font-semibold">Behavior</div>
-            <div className="text-xs text-gray-600 mt-1">Parallel</div>
-          </div>
-                <div className="text-2xl text-purple-600 font-bold mt-4">→</div>
+        <div className="text-2xl text-purple-600 font-bold">→</div>
 
+        {/* Common Behavior Node */}
+        <div className="bg-purple-100 px-4 py-3 rounded-lg border-2 border-purple-400 shadow w-40 text-center">
+          <div className="font-semibold">Behavior</div>
         </div>
-        
       </div>
 
-      {/* Merge arrow (to Output) */}
+      {/* Non-API route (direct to same Behavior node) */}
+      <div className="flex items-center gap-3">
+        <div className="text-gray-500 w-44 text-center text-xs">
+          If No API Content
+        </div>
+
+        <div className="text-2xl text-purple-600 font-bold">→</div>
+
+        {/* Same Behavior box shown visually in same row above */}
+        <div className="bg-purple-100 px-4 py-3 rounded-lg border-2 border-purple-400 shadow w-40 text-center opacity-60">
+          <div className="font-semibold">Behavior</div>
+          <div className="text-xs text-gray-500">(same node)</div>
+        </div>
+      </div>
+
     </div>
-      <div className="text-2xl text-purple-600 font-bold mt-4">→</div>
 
-    {/* 4️⃣ OUTPUT */}
-    <div className="flex flex-col items-center">
-      <div className="bg-purple-100 px-5 py-3 rounded-lg border-2 border-purple-400 shadow text-center">
-        <div className="font-semibold">Output</div>
+    <div className="text-2xl text-purple-600 font-bold">→</div>
+
+    {/* 4️⃣ Behavior → Diagram (horizontal) */}
+    <div className="flex items-center gap-3">
+
+      <div className="bg-purple-100 px-4 py-3 rounded-lg border-2 border-purple-400 shadow w-40 text-center">
+        <div className="font-semibold">Diagram</div>
+        <div className="text-xs text-gray-600 mt-1">If Domain Exists</div>
       </div>
+
+      <div className="text-2xl text-purple-600 font-bold">→</div>
+
+      {/* 5️⃣ Output */}
+      <div className="bg-purple-100 px-5 py-3 rounded-lg border-2 border-purple-400 shadow text-center">
+        <div className="font-semibold">Output Composition</div>
+      </div>
+
     </div>
 
   </div>
 
   <div className="mt-4 bg-purple-50 p-3 rounded text-sm">
-    <span className="font-semibold">Best for:</span> Adaptive routing, conditional execution, merging parallel results
+    <span className="font-semibold">Best for:</span> Adaptive routing, API-aware decisions, conditional diagram generation
   </div>
 </div>
+
 
 
 
